@@ -1,3 +1,10 @@
+Add a job entry if you have a specific job for garbage collection
+
+qb-core/shared/jobs.lua
+
+below is the code you will put into the jobs.lua
+
+
 ['garbage'] = {
     label = 'Garbage Collector',
     defaultDuty = true,
