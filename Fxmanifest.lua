@@ -5,26 +5,27 @@ author 'Your Name'
 description 'Advanced Garbage Collection Job'
 version '1.0.0'
 
-shared_scripts {
-    '@qb-core/shared/locale.lua',
-    'locales/en.lua', -- or any other localization file you need
-    'config.lua'
-}
-
-client_scripts {
-    '@qb-core/client/wrapper.lua',
-    '@qb-core/client/wrapper_func.lua',
-    'client.lua'
-}
-
+-- Define the server-side scripts
 server_scripts {
-    '@qb-core/server/wrapper.lua',
-    '@qb-core/server/wrapper_func.lua',
+    '@qb-core/server/main.lua',  -- Ensure this path matches the location of qb-core server script
     'server.lua'
 }
 
+-- Define the client-side scripts
+client_scripts {
+    '@qb-core/client/main.lua',  -- Ensure this path matches the location of qb-core client script
+    'client.lua'
+}
+
+-- Specify dependencies
 dependencies {
     'qb-core',
     'qb-menu',
     'ox_target'
+}
+
+-- Files and folders that will be included in the resource
+files {
+    'locales/en.lua',    -- Ensure localization files are correct
+    'config.lua'         -- Ensure config file is correctly referenced
 }
